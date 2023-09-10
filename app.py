@@ -5,9 +5,9 @@ from flask import render_template,request,redirect
 
 app = Flask('urlFinder')
 
-connections = mysql.connect(user='root'
-                            ,database='url_project',
-                            host='localhost')
+# connections = mysql.connect(user='root'
+#                             ,database='url_project',
+#                             host='localhost')
 
 def makeTokens(f):
     tkns_BySlash = str(f.encode('utf-8')).split('/')	# make tokens after splitting by slash
