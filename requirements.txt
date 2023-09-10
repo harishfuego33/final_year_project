@@ -16,7 +16,7 @@ jedi
 Jinja2
 joblib
 jupyter_client
-jupyter_core==
+jupyter_core
 MarkupSafe
 matplotlib-inline
 mysql-connector
