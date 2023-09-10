@@ -44,3 +44,4 @@ traitlets
 tzdata
 wcwidth
 Werkzeug
+gunicorn==19.7.1
