@@ -3,3 +3,7 @@ numpy
 flask
 joblib
 scikit-learn
+mysql.connector
+render_template
+redirect
+request
