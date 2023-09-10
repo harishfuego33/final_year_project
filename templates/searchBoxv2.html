@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUNT THE URL</title>
+    <!-- <link rel="stylesheet" href="searchBox.css"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap'); 
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: url(https://fonts.gstatic.com/s/sourcecodepro/v22/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DEyQtMRrTEUc.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  overflow: hidden;
+  background: #232323;
+}
+/* -----------------------HEADERPART START----------------------- */
+.header
+{
+  display: flex;
+  justify-content:start;
+  text-align: left;
+  width: 100%;  
+  padding: 18px 10px;
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background:rgba(255,255,255,0.30);  
+  color: #fff;
+}
+.tag
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+} 
+.tag h2
+{ 
+  padding: 0px 10px;
+}
+.tag i
+{
+  padding: 10px 0px 10px 0px ;
+}
+.home:hover
+{
+  cursor: pointer;
+  color:#232323;
+  border-bottom: 2px solid #fff; 
+}
+/* -----------------------MID PART STARTS----------------------- */
+
+.container
+{
+  width: 100%;
+  height: 30%;
+  max-width:600px;;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% ,-50%);
+  padding: 60px 10px ;
+  text-align: center;
+  border-radius: 20px;
+}
+.container h2
+{
+  font-size: 30px;
+  margin-bottom: 20px;
+  position: relative;
+  color: #fff;
+}
+.input-box
+{
+    width: 100%;
+    height: 25%;
+    background:#ffffff;
+    display: flex;
+    margin: 15px 0;
+    align-items: center;
+    border-radius: 30px;
+}
+input
+{
+    width: 100%;
+    height: 30px;
+    border-radius: 30px;
+    border: 0;
+    outline: 0;
+    align-items: center;
+    padding:0 0 0 20px;
+    background: transparent;
+}
+
+
+.input-box::placeholder
+{
+  color: #232323;
+  font-weight: 500;
+  font-size: 15px;
+}
+input:focus {
+  &::-webkit-input-placeholder {
+    color: transparent;
+    -webkit-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+  }
+  
+  &:-moz-placeholder { /* Firefox 18- */
+    color: transparent;
+    -webkit-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+  }
+  
+  &::-moz-placeholder {  /* Firefox 19+ */
+    color: transparent;
+    -webkit-transition: color 0.2s ease;
+    transition: color 0.2s ease; 
+  }
+  
+  &:-ms-input-placeholder {  
+    color: transparent;
+    -webkit-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+  }
+}
+.btn{
+  padding: 12px 16px;
+  margin-right: 20px;
+  background: transparent;
+  border: none;
+}
+.btn:hover
+{
+  cursor: pointer;
+}
+
+.status
+{
+  height: 20%;
+  border:none;
+  border-radius: 5px;
+  color:#fff;
+  background:transparent;
+  font-weight: 1000;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-left: 10px;
+}
+.hidden
+{
+  display: none;
+}
+
+.modal
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  background: white;  
+  padding: 6rem;
+  border-radius: 10px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.modalbox
+{
+  display: flex;
+  align-items: center;
+  width: 100%; 
+}
+.overlay
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: (255, 255, 255, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.close-modal
+{
+  height: 40px;
+  width: 40px;
+  font-size: 24px;
+  border-radius: 5px;
+}
+    </style>
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" cross origin="anonymous"></script>
+</head>
+<body>
+    <!-- <form action="javascript:void(0)" method="post" id="urlForm"> -->
+      <h1 id="testid" style="display: none;">{{A}}</h1>
+      <form action="/search" method="post">
+        <header class="header">
+            <div class="tag">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h2>SUSPICIOUS  URL DETECTOR</h2>
+                <h2 class="home" onclick="location.href ='/home';" >HOME</h2>
+            </div>
+        </header> 
+        <div class="container">
+            <h2>ENTER THE URL AND VERIFY THE URL </h2>
+                <div class="input-box">
+                    <input type="text" class="input-field" name="inp" placeholder="ENTER THE URL" required>
+                    <button class = 'btn'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>   
+                  </div>
+                  
+                </div>
+              </form>
+              
+              <div class="modal hidden">
+                <div class="modalbox">
+                  <button class="close-modal">&times;</button>
+            <div class="status">URL STATUS:
+              <div class="output">no output</div>
+            </div>  
+          </div>
+        </div>
+    <div class="overlay hidden"></div>
+  </body>
+  <script>
+    
+  var flag = document.querySelector('#testid').textContent;
+  
+  const inputField = document.querySelector('.input-field');
+  const modal = document.querySelector('.modal');
+  const overlay = document.querySelector('.overlay');
+  const close = document.querySelector('.close-modal');
+  const searchIcon = document.querySelector('.btn');
+  const container = document.querySelector('.container');
+  const Output = document.querySelector('.output');
+  console.log(flag)
+    function closeModal ()
+  {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+    container.classList.remove('hidden') ;
+  }
+  openModalWithConfirm(flag)
+function openModalWithConfirm(flag)
+{
+    if(flag == 'no')
+    {
+      modal.classList.remove('hidden');
+      overlay.classList.remove('hidden');
+      container.classList.add('hidden');
+      modal.style.background="linear-gradient(315deg, #fbb034 0%, #ffdd00 74%)";
+      Output.textContent = 'PLEASE ENTER URL📝';
+
+    }
+    else if(flag=='1')//good
+    {
+      modal.classList.remove('hidden');
+      overlay.classList.remove('hidden');
+      container.classList.add('hidden');
+      modal.style.background="linear-gradient(to top left, #28b487, #7dd56f)";
+      Output.textContent = 'LOOKS LIKE GOOD😀🚀';
+    }
+    else if(flag=='0')//bad
+    {
+      modal.classList.remove('hidden');
+      overlay.classList.remove('hidden');
+      container.classList.add('hidden')
+      modal.style.background="linear-gradient(326deg, #bd4f6c 0%, #d7816a 74%)";
+      Output.textContent = 'LOOKS LIKE SUSPICIOUS🧐';    
+    }
+}
+/*function seachEvent()
+{
+  console.log("searchEvn")
+    if(inputField.value=='')
+        openModalWithConfirm('no');
+    else{
+      console.log('S'+flag);
+      openModalWithConfirm(flag);
+    }
+}*/
+close.addEventListener('click',closeModal);
+overlay.addEventListener('click',closeModal);
+/*searchIcon.addEventListener('click', function(e)
+{
+  e.preventDefault(); 
+  console.log("hi");
+  
+  seachEvent();
+});*/
+
+document.addEventListener('keydown',function(event)
+{
+    if(event.key==="Escape"&&!modal.classList.contains('hidden'))
+    {
+        event.preventDefault();
+        closeModal();
+    }
+    /*else if(event.key==='Enter')
+    {
+      console.log(event.key);
+        event.preventDefault();
+        seachEvent();
+    }*/
+});
+
+</script>
+</html> 

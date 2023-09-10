@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUNT THE URL</title>
+    <!-- <link rel="stylesheet" href="home.css"> -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap'); 
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body
+{
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: url(https://fonts.gstatic.com/s/sourcecodepro/v22/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DEyQtMRrTEUc.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  background-color:#232323;
+  overflow: hidden;
+}
+ 
+.tag
+{
+  display: flex;
+  align-items: center;
+  color: #fff;
+} 
+
+.tag h2{ 
+    padding: 0 10px;
+}
+
+.about:hover
+{
+  cursor: pointer;
+  color:#232323;
+  border-bottom: 2px solid #fff; 
+}
+
+.header
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background:rgba(255,255,255,0.30);  
+}
+.signup,.signIn
+{
+  color:#232323;
+  height: 50px;
+  width: 100px;
+  border:2px solid #232323;
+  border-radius: 20px;
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background:rgba(255,255,255,0.30);
+}
+
+.signup:hover,.signIn:hover
+{
+  background-color: #232323;
+  color: #fff;
+  border:2px solid #fff;
+}
+
+.container{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+}
+.container span{
+  text-transform: uppercase;
+  display: block;
+}
+.text1{
+  color: white;
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+  background: #232323;
+  position: relative;
+  animation: text 3s 1;
+}
+.text2{
+  font-size: 30px;
+  color: #6ab04c;
+}
+  
+@keyframes text {
+  0%{
+    color: #232323;
+    margin-bottom: -40px;
+  }
+  30%{
+    letter-spacing: 25px;
+    margin-bottom: -40px;
+  }
+  85%{
+    letter-spacing: 8px;
+    margin-bottom: -40px;
+  }
+}
+
+.hidden 
+{
+  display: none;
+}
+
+.close-modal p
+{
+  color: #232323;
+    
+}
+
+.modal
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  background-color: white;
+  padding: 6rem;
+  border-radius: 10px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: (255, 255, 255, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.close-modal
+{
+  height: 40px;
+  width: 40px;
+  font-size: 24px;
+  border-radius: 5px;
+}
+  
+    </style>
+
+
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" cross origin="anonymous"></script>
+
+</head>
+<body>
+    <header class="header">
+        <div class="tag">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h2>SUSPICIOUS URL DETECTOR</h2>
+            <h2 class="about">ABOUT</h2>
+        </div>
+        <div class="btn-container">
+          <button class="signIn" onclick="location.href ='/signIn';">SIGN IN</button>
+          <button class="signup" onclick="location.href ='/signUp';">SIGN UP</button>        
+        </div>
+    </header>
+    <div class="container">
+        <span class="text1">LET FIND SUSPICIOUS</span>
+        <span class="text2">      LINK🔎</span>
+    </div> 
+      <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <h1>
+          It is a project done by the COMPUTER TECHNOLOGY STUDENT
+        <h1>
+      </div>
+      <div class="overlay hidden"></div>
+      
+      <script src="">
+        'use strict';
+const about = document.querySelector('.about');
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const close = document.querySelector('.close-modal');
+const closeModal=function ()
+{
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+}
+const openModal =function ()
+{
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');  
+}
+about.addEventListener('click',openModal);
+close.addEventListener('click',closeModal);
+overlay.addEventListener('click',closeModal)
+document.addEventListener('keydown',function(event)
+{
+    if(event.key&&!modal.classList.contains('hidden'))
+        closeModal();
+
+});
+function singInPage(){
+    window.location.href="signIn/signIn.html";
+}
+
+      </script>
+</body>
+</html>

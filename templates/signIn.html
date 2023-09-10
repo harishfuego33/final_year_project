@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUNT THE URL</title>
+    <!-- <link rel="stylesheet" href="signIn.css"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap'); 
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body
+{
+  display: flex;
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: url(https://fonts.gstatic.com/s/sourcecodepro/v22/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DEyQtMRrTEUc.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  overflow: hidden;
+  background: #232323;
+}
+
+
+.header
+{
+  display: flex;
+  justify-content:start;
+  text-align: left;
+  width: 100%;
+  padding: 18px 10px;
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background:rgba(255,255,255,0.30);  
+  color: #fff;
+}
+.tag
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #fff;
+} 
+.tag h2
+{ 
+  padding: 0px 10px;
+}
+.tag i
+{
+  padding: 10px 0px 10px 0px ;
+}
+.home:hover
+{
+  cursor: pointer;
+  color:#232323;
+  border-bottom: 2px solid #fff; 
+}
+.container
+{
+  width: 90%;
+  height: 40%;
+  max-width:320px;;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% ,-50%);
+  padding: 50px 60px 70px ;
+  text-align: center;
+  border-radius: 20px;
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background: rgba(255,255,255,0.30);
+  justify-content: center
+  ;
+}
+.container h2
+{
+  font-size: 30px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.input-box
+{
+  background: #eaeaea;
+  margin: 15px 0;
+  border-radius: 15px;
+  display:flex;
+  align-items: center;
+}
+.EmailField,.passwordField
+{
+  width:100%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 20px 18px;
+}
+.input-box ::placeholder
+{
+  color: #232323;
+  font-weight: 500;
+  font-size: 15px;
+}
+.input-box i
+{
+  padding:0 0 0 10px;
+  
+}
+.input-box img
+{
+  width: 20px;
+  height:17px;
+  padding-right:10px;
+}
+.input-box img:hover
+{
+  cursor: pointer;
+}
+input:focus {
+  &::-webkit-input-placeholder {
+    color: transparent;
+    -webkit-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+     color: transparent;
+     -webkit-transition: color 0.2s ease;
+     transition: color 0.2s ease;
+    }
+    
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: transparent;
+     -webkit-transition: color 0.2s ease;
+     transition: color 0.2s ease; 
+    }
+    
+    &:-ms-input-placeholder {  
+      color: transparent;
+      -webkit-transition: color 0.2s ease;
+      transition: color 0.2s ease;
+    }
+  }
+.checker
+{
+  padding-bottom: 20px;
+  font-weight: 600;
+  color:red;
+}
+/* .incorrect
+{
+  border: 1px solid red ;
+} */
+
+.signIn-btn
+{
+  display: flex;
+  justify-content: space-around;
+}
+
+.signIn-btn button
+{
+  justify-content: center;
+  width: 30%;
+  height: 25%;
+  padding: 9px 6px;
+  border: 0;
+  border-radius: 20px;
+}
+.signIn-btn button:hover
+{
+  cursor: pointer;
+  color: #fff;
+  background-color: #232323;
+}
+.signIn-btn p
+{
+  color:black;
+  font-size: 18px;
+  font-weight: 600;
+}
+.signIn-btn p:hover
+{
+  color: #fff;
+  cursor: pointer;
+}
+.new-account
+{
+  display: flex;
+  padding-top: 10px;
+  justify-content:center;
+  font-weight: 600;
+}
+.new-account p:hover
+{
+  cursor: pointer;
+  color: #fff;
+}
+.hidden
+{
+  display: none;
+} 
+
+    </style>
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" cross origin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="tag">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h2>SUSPICIOUS  URL DETECTOR</h2>
+            <h2 class="home" onclick="location.href ='/';">HOME</h2>
+        </div>
+    </header>
+    <form action="/signIn" method="post">
+      <div class="container">
+        <h2>SIGN IN</h2>
+        <div class="typebox">
+            <div class="input-box">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="text" class="EmailField" name="Eemail" placeholder="EMAIL"  required>
+            </div>
+            <div class="input-box ">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" class="passwordField " name="Epassword" placeholder="PASSWORD" required>
+                <img src="eye-close.png " class="eye-btn hidden">
+            </div>
+            <p class="checker hidden">Email or Password is incorrect</p>
+        </div>
+        <div class="signIn-btn">
+            <button class="submit-btn">SIGN IN</button>
+            <p>Forget password</p>
+        </div>
+ 
+        <div class="new-account">
+            <p onclick="location.href ='/signUp';">create a new account? SIGN UP<p>
+        </div>
+        <br>
+        <p style="font-size: 14px color='red'">{{TOGGLE}}</p>
+    </div>
+  </form>
+  <!-- {% if TOGGLE == '1': %}
+
+  checker.classList.remove('hidden');
+  inputBox.classList.add('incorrect');
+  {% endif %} -->
+    <script> 
+        const EmailField = document.querySelector('.EmailField');
+const passwordField = document.querySelector('.passwordField');
+const eyePng = document.querySelector('.eye-btn');
+const checker = document.querySelector('.checker');
+const submitBtn= document.querySelector('.submit-btn');
+const inputBox = document.querySelector('.input-box')
+let flag = true;
+passwordField.addEventListener('focus',function(){
+  eyePng.classList.remove('hidden');
+  flag = false;
+})
+eyePng.addEventListener('click',function()
+{
+  let img_src = document.querySelector(".eye-btn").src;
+  let src=img_src.split('/')[4]
+  let value = passwordField.value;
+  if(src ==='eye-close.png' && value.length>0)
+  {
+      eyePng.src = 'eye-open.png';
+      passwordField.type = 'text';  
+    }
+    else
+    {
+      eyePng.src = 'eye-close.png';
+      passwordField.type = 'password';
+    }
+})
+
+/* submitBtn.addEventListener('click',function()
+{
+  if(EmailField.value=='harishkumar.ct20@bitsathy.ac.in'&&passwordField.value =='mayil@123')
+  {
+    window.location.href = '/searchBox/searchBox.html';
+  }
+  else
+  {
+    checker.classList.remove('hidden');
+    inputBox.classList.add('incorrect');
+    
+  }
+})
+*/
+
+
+    </script>
+</body>
+</html>
