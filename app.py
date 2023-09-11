@@ -3,7 +3,7 @@ from flask import Flask
 import mysql.connector as mysql
 from flask import render_template,request,redirect
 
-app = Flask(urlFinder)
+app = Flask(__name__)
 
 # connections = mysql.connect(user='root'
 #                             ,database='url_project',
@@ -100,5 +100,5 @@ def url_ins():
     else:
         return render_template('searchBoxv2.html',A=str(1))
     
-if urlFinder == '__main__':
+if __name__ == '__main__':
     app.run(debug=True)
