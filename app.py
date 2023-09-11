@@ -100,5 +100,5 @@ def url_ins():
     else:
         return render_template('searchBoxv2.html',A=str(1))
     
-    
-app.run(debug=True)
+if urlFinder == '__main__':
+    app.run(debug=True)
