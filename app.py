@@ -3,7 +3,7 @@ from flask import Flask
 import mysql.connector as mysql
 from flask import render_template,request,redirect
 
-app = Flask('urlFinder')
+app = Flask(urlFinder)
 
 # connections = mysql.connect(user='root'
 #                             ,database='url_project',
