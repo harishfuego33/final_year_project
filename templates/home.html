@@ -171,8 +171,8 @@ body
             <h2 class="about">ABOUT</h2>
         </div>
         <div class="btn-container">
-          <button class="signIn" onclick="location.href ='/signIn';">SIGN IN</button>
-          <button class="signup" onclick="location.href ='/signUp';">SIGN UP</button>        
+          <button class="signIn" onclick="location.href ='signIn.html';">SIGN IN</button>
+          <button class="signup" onclick="location.href ='signUp.html';">SIGN UP</button>        
         </div>
     </header>
     <div class="container">
@@ -187,8 +187,8 @@ body
       </div>
       <div class="overlay hidden"></div>
       
-      <script src="">
-        'use strict';
+<script>
+'use strict';
 const about = document.querySelector('.about');
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
@@ -212,10 +212,6 @@ document.addEventListener('keydown',function(event)
         closeModal();
 
 });
-function singInPage(){
-    window.location.href="signIn/signIn.html";
-}
-
-      </script>
+</script>
 </body>
 </html>

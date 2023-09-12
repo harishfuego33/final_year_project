@@ -178,7 +178,7 @@ input:focus {
 {
   display: none;
 }
-    </style>
+</style>
     <script src="https://kit.fontawesome.com/c4254e24a8.js" cross origin="anonymous"></script>
 
 </head>
@@ -187,7 +187,7 @@ input:focus {
         <div class="tag">
             <i class="fa-solid fa-magnifying-glass"></i>
             <h2>SUSPICIOUS  URL DETECTOR</h2>
-            <h2 class="home" onclick="location.href ='/home/home.html';" >HOME</h2>
+            <h2 class="home" onclick="location.href ='/home.html';" >HOME</h2>
         </div>
     </header> 
     <form action="/signUp" method="post">
@@ -214,13 +214,13 @@ input:focus {
             </div>
             <div class="signUp-btn">
                 <button class="signUp">SIGN UP</button>
-                <p onclick="location.href ='/signIn';"> Already have a account?</p>
+                <p onclick="location.href ='signIn.html';"> Already have a account?</p>
             </div>
                 
             </div>
-    </form>
-    </div>
-    <script>
+  </form>
+  </div>
+<script>
         const EmailField = document.querySelector('.EmailField');
 const passwordField = document.querySelector('.passwordField');
 const eyePng = document.querySelector('.eye-btn');
@@ -246,15 +246,7 @@ eyePng.addEventListener('click',function()
       passwordField.type = 'password';
     }
 })
-signUp.addEventListener('click',function()
-{
-  console.log(passwordField.value);
-  if(passwordField.value=='harish@03'&&EmailField.value=='harishkumar.ct20@bitsathy.ac.in')
-  {
-    alert("log in sussesfully🤩");
-  }
 
-})
     </script>
 </body>
 </html>

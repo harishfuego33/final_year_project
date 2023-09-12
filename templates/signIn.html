@@ -150,11 +150,6 @@ input:focus {
   font-weight: 600;
   color:red;
 }
-/* .incorrect
-{
-  border: 1px solid red ;
-} */
-
 .signIn-btn
 {
   display: flex;
@@ -208,11 +203,12 @@ input:focus {
     <script src="https://kit.fontawesome.com/c4254e24a8.js" cross origin="anonymous"></script>
 </head>
 <body>
+    <div class="tog hidden">{{TOGGLE}}</div>
     <header class="header">
         <div class="tag">
             <i class="fa-solid fa-magnifying-glass"></i>
             <h2>SUSPICIOUS  URL DETECTOR</h2>
-            <h2 class="home" onclick="location.href ='/';">HOME</h2>
+            <h2 class="home" onclick="location.href ='/templates/home.html';">HOME</h2>
         </div>
     </header>
     <form action="/signIn" method="post">
@@ -226,7 +222,7 @@ input:focus {
             <div class="input-box ">
                 <i class="fa-solid fa-lock"></i>
                 <input type="password" class="passwordField " name="Epassword" placeholder="PASSWORD" required>
-                <img src="eye-close.png " class="eye-btn hidden">
+                <img src="eye-close.png " class="eye-btn">
             </div>
             <p class="checker hidden">Email or Password is incorrect</p>
         </div>
@@ -234,31 +230,21 @@ input:focus {
             <button class="submit-btn">SIGN IN</button>
             <p>Forget password</p>
         </div>
- 
         <div class="new-account">
-            <p onclick="location.href ='/signUp';">create a new account? SIGN UP<p>
+            <p onclick="location.href ='signUp.html';">create a new account? SIGN UP<p>
         </div>
         <br>
-        <p style="font-size: 14px color='red'">{{TOGGLE}}</p>
     </div>
-  </form>
-  <!-- {% if TOGGLE == '1': %}
-
-  checker.classList.remove('hidden');
-  inputBox.classList.add('incorrect');
-  {% endif %} -->
-    <script> 
-        const EmailField = document.querySelector('.EmailField');
+</form>
+<script> 
+let tog = document.querySelector('.tog').textContent;
+const EmailField = document.querySelector('.EmailField');
 const passwordField = document.querySelector('.passwordField');
 const eyePng = document.querySelector('.eye-btn');
 const checker = document.querySelector('.checker');
 const submitBtn= document.querySelector('.submit-btn');
 const inputBox = document.querySelector('.input-box')
-let flag = true;
-passwordField.addEventListener('focus',function(){
-  eyePng.classList.remove('hidden');
-  flag = false;
-})
+
 eyePng.addEventListener('click',function()
 {
   let img_src = document.querySelector(".eye-btn").src;
@@ -275,21 +261,14 @@ eyePng.addEventListener('click',function()
       passwordField.type = 'password';
     }
 })
-
-/* submitBtn.addEventListener('click',function()
-{
-  if(EmailField.value=='harishkumar.ct20@bitsathy.ac.in'&&passwordField.value =='mayil@123')
-  {
-    window.location.href = '/searchBox/searchBox.html';
-  }
-  else
+  if(tog==0)
   {
     checker.classList.remove('hidden');
     inputBox.classList.add('incorrect');
-    
   }
-})
-*/
+    
+  
+
 
 
     </script>

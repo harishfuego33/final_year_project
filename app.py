@@ -60,7 +60,7 @@ def verify_user():
     connections.commit()
     cursor.close()
     if not user:
-        return render_template('/signIn.html',TOGGLE='EMAIL OR PASSWORD IS WRONG, PLEASE CHECK') 
+        return render_template('/signIn.html',TOGGLE='0') 
     else:
         return render_template('/searchBox.html')
 
