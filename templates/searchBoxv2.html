@@ -211,7 +211,7 @@ input:focus {
             <div class="tag">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <h2>SUSPICIOUS  URL DETECTOR</h2>
-                <h2 class="home" onclick="location.href ='/home';" >HOME</h2>
+                <h2 class="home" onclick="location.href ='';" >HOME</h2>
             </div>
         </header> 
         <div class="container">
@@ -281,25 +281,9 @@ function openModalWithConfirm(flag)
       Output.textContent = 'LOOKS LIKE SUSPICIOUS🧐';    
     }
 }
-/*function seachEvent()
-{
-  console.log("searchEvn")
-    if(inputField.value=='')
-        openModalWithConfirm('no');
-    else{
-      console.log('S'+flag);
-      openModalWithConfirm(flag);
-    }
-}*/
 close.addEventListener('click',closeModal);
 overlay.addEventListener('click',closeModal);
-/*searchIcon.addEventListener('click', function(e)
-{
-  e.preventDefault(); 
-  console.log("hi");
-  
-  seachEvent();
-});*/
+
 
 document.addEventListener('keydown',function(event)
 {
@@ -308,12 +292,6 @@ document.addEventListener('keydown',function(event)
         event.preventDefault();
         closeModal();
     }
-    /*else if(event.key==='Enter')
-    {
-      console.log(event.key);
-        event.preventDefault();
-        seachEvent();
-    }*/
 });
 
 </script>
