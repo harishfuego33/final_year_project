@@ -203,7 +203,7 @@ input:focus {
     <script src="https://kit.fontawesome.com/c4254e24a8.js" cross origin="anonymous"></script>
 </head>
 <body>
-    <div class="tog hidden">{{TOGGLE}}</div>
+    <div id="tog" style="display: none;">{{TOGGLE}}</div>
     <header class="header">
         <div class="tag">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -237,7 +237,7 @@ input:focus {
     </div>
 </form>
 <script> 
-let tog = document.querySelector('.tog').textContent;
+let tog = document.querySelector('#tog').textContent;
 const EmailField = document.querySelector('.EmailField');
 const passwordField = document.querySelector('.passwordField');
 const eyePng = document.querySelector('.eye-btn');
@@ -261,16 +261,11 @@ eyePng.addEventListener('click',function()
       passwordField.type = 'password';
     }
 })
-  if(tog==0)
+  if(tog=='0')
   {
     checker.classList.remove('hidden');
     inputBox.classList.add('incorrect');
   }
-    
-  
-
-
-
-    </script>
+  </script>
 </body>
 </html>
